@@ -1,0 +1,97 @@
+>>> movies = ["The Holy Grail",
+	      "The Life of Brian",
+	      "The Meaning of Life"]
+>>> print movies[1]
+The Life of Brian
+>>> print movies
+['The Holy Grail', 'The Life of Brian', 'The Meaning of Life']
+>>> print len(movies)
+3
+>>> mov = movies
+>>> print mov
+['The Holy Grail', 'The Life of Brian', 'The Meaning of Life']
+>>> mov.append("The Holly Wood")
+>>> print mov
+['The Holy Grail', 'The Life of Brian', 'The Meaning of Life', 'The Holly Wood']
+>>> mov.pop
+<built-in method pop of list object at 0x10a0358c0>
+>>> mov.pop()
+'The Holly Wood'
+>>> print mov
+['The Holy Grail', 'The Life of Brian', 'The Meaning of Life']
+>>> mov.extend(mov)
+>>> print mov
+['The Holy Grail', 'The Life of Brian', 'The Meaning of Life', 'The Holy Grail', 'The Life of Brian', 'The Meaning of Life']
+>>> mov.remove("The Holy Grail")
+>>> print mov
+['The Life of Brian', 'The Meaning of Life', 'The Holy Grail', 'The Life of Brian', 'The Meaning of Life']
+>>> mov.insert(0, 'The Holy Grail')
+>>> print mov
+['The Holy Grail', 'The Life of Brian', 'The Meaning of Life', 'The Holy Grail', 'The Life of Brian', 'The Meaning of Life']
+>>> 
+
+>>> movies = ['The Holy Grail', 1975, 'Terry Jones & Terry Gilliam', 91,
+	          ['Graham Chapman',
+		       ['Michael Palin', 'Johh Cleese', 'Terry Gillam', 'Eric Idle', 'Terry Jones']]]
+>>> 
+>>> print movies
+['The Holy Grail', 1975, 'Terry Jones & Terry Gilliam', 91, ['Graham Chapman', ['Michael Palin', 'Johh Cleese', 'Terry Gillam', 'Eric Idle', 'Terry Jones']]]
+>>> 
+>>> mov = movies
+>>> 
+>>> for each in mov:
+	print each
+
+	
+The Holy Grail
+1975
+Terry Jones & Terry Gilliam
+91
+['Graham Chapman', ['Michael Palin', 'Johh Cleese', 'Terry Gillam', 'Eric Idle', 'Terry Jones']]
+>>> 
+>>> isinstance(mov, list)
+True
+>>> 
+>>> for each in mov:
+	if isinstance(each, list):
+		for each_iter in each:
+			print each_iter
+	else:
+		print each
+
+		
+The Holy Grail
+1975
+Terry Jones & Terry Gilliam
+91
+Graham Chapman
+['Michael Palin', 'Johh Cleese', 'Terry Gillam', 'Eric Idle', 'Terry Jones']
+>>> 
+>>> 
+>>> def print_lol(the_list):
+	for each_item in the_list:
+		if isinstance(each_item, list):
+			print_lol(each_item)
+		else:
+			print each_item
+
+			
+>>> print_lol(mov)
+The Holy Grail
+1975
+Terry Jones & Terry Gilliam
+91
+Graham Chapman
+Michael Palin
+Johh Cleese
+Terry Gillam
+Eric Idle
+Terry Jones
+>>> 
+
+inoremap ( ()<ESC>i
+inoremap [ []<ESC>i
+inoremap { {}<ESC>i
+inoremap < <><ESC>i
+inoremap " ""<ESC>i
+inoremap ' ''<ESC>i
